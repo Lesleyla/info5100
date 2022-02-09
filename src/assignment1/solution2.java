@@ -1,35 +1,34 @@
-package com.company;
+package assignment1;
 
 import java.util.Scanner;
-
-public class solution3 {
-    public static boolean containDuplicates(String s) {
+public class solution2 {
+    public static boolean isUnique(String s) {
         long left = 0;
         long right = 0;
         for (char c : s.toCharArray()) {
             if (c >= 64) {
                 long bitIndex = 1L << (c - 64);     //ASCII 0-63
                 if ((right & bitIndex) != 0) {
-                    return true;
+                    return false;
                 }
                 right |= bitIndex;
             } else {
                 long bitIndex = 1L << c;         //64-127
                 if ((left & bitIndex) != 0) {
-                    return true;
+                    return false;
                 }
                 left |= bitIndex;
             }
         }
-        return false;
+        return true;
     }
 
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
-        System.out.print("Input a string: if string contains duplicates, it will return true, otherwise false.");
+        System.out.print("Input a string: if string has all unique characters, it will return true, otherwise false.");
         String s = scan.next();
         scan.close();
 
-        System.out.println(containDuplicates(s));
+        System.out.println(isUnique(s));
     }
 }
