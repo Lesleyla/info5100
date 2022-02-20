@@ -6,7 +6,7 @@ public class Student extends Person{
         super(name, ID, age);
     }
 
-    public String takeQuiz(String quiz1) {
-        return "the student need to take quiz.";
+    public String takeQuiz(String quiz) {
+        return "the student" +this.getName()+"need to take quiz"+quiz;
     }
 }
