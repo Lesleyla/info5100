@@ -8,7 +8,7 @@ public class Professor extends Person{
         super(name, ID, age);
     }
 
-    public void giveQuiz(String quiz) {
-        this.quiz = quiz;
+    public String giveQuiz(String quiz) {
+        return "the prof" +this.getName()+"need to give quiz"+quiz;
     }
 }
